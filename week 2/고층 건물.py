@@ -23,5 +23,4 @@ for i in range(n):
             inc = d
     sum_buildings.append(check_buildings)
 
-print(sum_buildings)
 print(max(sum_buildings))
