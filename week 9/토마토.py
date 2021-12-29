@@ -10,8 +10,6 @@ M, N, H = map(int, input().split()) # M 가로, N 세로, H 쌓아올린 상자�
 graph = []
 queue = deque([])
 
-tomato = [list(map(int, input().split())) for _ in range(N)] # 2차원 리스트로 토마토 넣어두기
-
 for i in range(H):
     temp = []
     for j in range(N):
