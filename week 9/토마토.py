@@ -25,6 +25,8 @@ dx = [-1, 1, 0, 0, 0, 0]
 dy = [0, 0, 1, -1, 0, 0]
 dz = [0, 0, 0, 0, 1, -1]
 
+
+
 while(queue):
     x, y, z = queue.popleft()
     for i in range(6):
@@ -32,23 +34,14 @@ while(queue):
         # i == 1일 떄 [1, 0, 0] 우
         # i == 2일 떄 [0, 1, 0] 하
         # i == 3일 떄 [0, -1, 0] 상
-        # i == 4일 떄 [0, 0, 1] 아랫집
+        #i == 4일 떄 [0, 0, 1] 아랫집
         # i == 5일 떄 [0, 0, -1] 윗집
         nx = dx[i] + x
         ny = dy[i] + y
         nz = dz[i] + z
-
-
-def bfs():
-    while queue:
-        x, y, z = queue.popleft()
-        for i in range(6):
-            nx = dx[i] + x
-            ny = dy[i] + y
-            nz = dz[i] + z
-            if 0 <= nx < H and 0 <= ny < N and 0 <= nz < M and graph[nx][ny][nz] == 0:
-                queue.append([dx, dy, dz])
-                graph[dx][dy][dz] = graph[x][y][z] + 1
+        if 0 <= nx < H and 0 <= ny < N and 0 <= nz < M and graph[nx][ny][nz] == 0:
+            queue.append([nx, ny, nz])
+            graph[nx][ny][nz] = graph[x][y][z] + 1
 
 day = 0
 
